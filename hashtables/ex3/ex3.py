@@ -3,7 +3,17 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    count = {}
 
+    for array in arrays:
+        for number in array:
+            if number in count:
+                count[number] += 1
+            
+            else:
+                count[number] = 1
+
+    result = [item[0] for item in count.items() if item[1] == len(arrays)]
     return result
 
 
